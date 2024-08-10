@@ -91,3 +91,10 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+uint64
+sys_freemem(void)
+{
+    extern uint64 free_memory_size();
+    return free_memory_size();
+}
